@@ -16,7 +16,7 @@ io.on("connection", (socket) => { //bağlantı gerçekleştiği anda
 
 	Messages.list((data) => { // redis üzerindeki mesajları alıyoruz
 		console.log(data);
-		socket.emit("message-list", data); // bağlanmış olan kullanıcıya iletiyoruz
+		socket.emit("message-list", data); // bağlanmış olan kullanıcıya iletiyoruz || Message-list kanalına gönderiliyor.
 	});
 
 	socket.on("new-message", (message) => { // herhangi bir mesaj backend'e emit edildiğinde 

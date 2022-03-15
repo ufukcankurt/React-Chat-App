@@ -27,3 +27,16 @@ export const subscribeChat = (cb) => {
         cb(message)
     })
 }
+
+// Kanala abone olmak
+export const subscribeInitialMessages = (cb) =>{
+    if(!socket) return;
+
+    socket.on("message-list", (message) => {
+        console.log("Initial", message)
+        cb(message)
+    })
+}
+
+// Uygulamada kullanıcı girişi olmadığı için mesajları kullanıcı ID'leriyle eşleştiremiyoruz.
+// Bu nedenle sayfayı yeniledikten sonra tüm mesajlar sol tarafta gözüküyor.. ve "fromMe" parametresini tutamadığımız için tekrardan kullanılmıyor 
