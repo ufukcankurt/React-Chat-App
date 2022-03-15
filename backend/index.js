@@ -23,6 +23,7 @@ io.on("connection", (socket) => { //bağlantı gerçekleştiği anda
 		console.log(message);
 		Messages.upsert({ message }); // bunu redise yazıyoruz
 
+		// dinleyeceğimiz kanal "receive-message" kanalı
 		socket.broadcast.emit("receive-message", message); // daha sonra bağlı olan diğer client'lara bunu emitliyoruz
 	});
 

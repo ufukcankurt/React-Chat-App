@@ -1,24 +1,34 @@
-import React, {useState} from 'react'
-import styles from "./styles.module.css"
+import React, { useState } from "react";
+import { sendMessage } from "../socketApi";
+import styles from "./styles.module.css";
+import { useChat } from "../context/ChatContext";
 
 function ChatForm() {
+  const [message, setMessage] = useState("");
+  
+  const {setMessages} = useChat()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(message);
 
-    const [message, setMessage] = useState("")
+    setMessages((prevState) => [...prevState, {message , fromMe:true}])
+    sendMessage(message);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(message);
-
-        setMessage("")
-    }
+    setMessage("");
+  };
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <input className={styles.textInput} type="text" value={message} onChange={(e)=> setMessage(e.target.value)} />
-        </form>
+      <form onSubmit={handleSubmit}>
+        <input
+          className={styles.textInput}
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </form>
     </div>
-  )
+  );
 }
 
-export default ChatForm
+export default ChatForm;
