@@ -1,3 +1,21 @@
+# Chat App | React
+
+> We developed this app with React tutorial in Patika.dev.
+
+### Used Technologies
+
+- Node.js
+- Express.js
+- Socket.io
+- Redis
+
+## 📲 Preview 
+
+<p align="center" style="padding: 10px">
+    <img alt="Chatt App Preview" src="./img/gif.gif" width="100%">
+    <br>
+
+_____
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
