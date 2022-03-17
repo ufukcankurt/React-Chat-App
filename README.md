@@ -2,6 +2,8 @@
 
 > We developed this app with React tutorial in Patika.dev.
 
+> ***In this application, I learned how socket.io and simultaneous users connect to each other and how they can be manipulated. And I also learned that Redis database is called Cache Database and it works much faster by keeping the data in cache.***
+
 ### Used Technologies
 
 - Node.js
